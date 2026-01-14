@@ -1,0 +1,223 @@
+/*
+Theme Name: limaomao
+Version: 1.2
+*/
+
+/* —— 全局重置 —— */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #222;
+  background: #fff;
+}
+
+/* —— Header —— */
+.site-header {
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+.site-title a,
+.site-logo a {
+  font-size: 1.35rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #111;
+}
+
+/* 导航 */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+.nav-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+.nav-menu a:hover {
+  color: #0073aa;
+}
+
+/* 搜索框 —— 直接显示，美化 */
+.search-box {
+  display: block;
+  margin-left: 1rem;
+}
+.search-box input[type="search"] {
+  width: 180px;
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: #f8f9fa;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.search-box input[type="search"]:focus {
+  outline: none;
+  border-color: #0073aa;
+  box-shadow: 0 0 0 2px rgba(0,115,170,0.15);
+  background: #fff;
+}
+
+/* —— 全局通知栏 —— */
+.global-notice {
+  background: #f8f9fa;
+  border-bottom: 1px solid #eee;
+  padding: 8px 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+.notice-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.global-notice a {
+  color: #0073aa;
+  text-decoration: underline;
+}
+.global-notice a:hover {
+  color: #005a87;
+}
+
+/* —— 主内容区 —— */
+.site-main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* 文章标题链接 */
+.entry-header h2 a {
+  text-decoration: none;
+  color: #111;
+  transition: color 0.2s;
+}
+.entry-header h2 a:hover {
+  color: #0073aa;
+}
+
+/* 正文内链接（蓝色+下划线） */
+.entry-content a {
+  color: #0073aa;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+.entry-content a:hover {
+  color: #005a87;
+  text-decoration-thickness: 2px;
+}
+
+/* —— 评论模块 —— */
+.comment-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+.comment {
+  padding: 1.2rem 0;
+  border-bottom: 1px solid #eee;
+}
+.comment-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 0.5rem;
+}
+.comment-author .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.comment-author .fn {
+  font-weight: 600;
+  color: #0073aa; /* 名字蓝色 */
+  font-size: 0.95em;
+  margin: 0;
+}
+.comment-metadata {
+  font-size: 0.85em;
+  color: #888;
+}
+.comment-content {
+  margin-top: 0.5rem;
+  line-height: 1.6;
+}
+.comment-content a {
+  color: #666; /* 评论内链接灰色 */
+  text-decoration: underline;
+}
+.comment-content a:hover {
+  color: #333;
+}
+
+/* —— Footer —— */
+.site-footer {
+  padding: 2rem 1rem;
+  text-align: center;
+  background: #fafafa;
+  color: #666;
+  font-size: 0.95rem;
+}
+.site-footer a {
+  color: #888;
+  text-decoration: none;
+}
+.site-footer a:hover {
+  color: #0073aa;
+  text-decoration: underline;
+}
+
+/* Dark Mode (保留) */
+.dark-mode {
+  background: #121212;
+  color: #e0e0e0;
+}
+.dark-mode .site-header,
+.dark-mode .global-notice,
+.dark-mode .site-footer {
+  background: #1e1e1e;
+  color: #ccc;
+}
+.dark-mode .nav-menu a { color: #bbb; }
+.dark-mode .nav-menu a:hover { color: #90caf9; }
+.dark-mode .entry-content a { color: #64b5f6; }
+.dark-mode .comment-author .fn { color: #64b5f6; }
+.dark-mode .comment-content a { color: #aaa; }
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 12px 1rem;
+  }
+  .search-box input[type="search"] {
+    width: 140px;
+    margin-top: 8px;
+  }
+}
